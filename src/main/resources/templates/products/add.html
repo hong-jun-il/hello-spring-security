@@ -37,9 +37,12 @@
                     <a class="nav-link" th:href="@{/admin/dashboard}">관리자</a>
                 </li>
             </ul>
-            <form th:action="@{/logout}" method="post" class="d-flex">
-                <button class="btn btn-outline-light btn-sm px-3">로그아웃</button>
-            </form>
+            <div class="d-flex gap-2 align-items-center">
+                <a th:href="@{/user/password}" class="btn btn-outline-light btn-sm px-3">비밀번호 변경</a>
+                <form th:action="@{/logout}" method="post">
+                    <button class="btn btn-outline-light btn-sm px-3">로그아웃</button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>
@@ -91,6 +94,13 @@
         </div>
     </div>
 </div>
+
+<footer class="mt-5 py-3 border-top">
+    <div class="container text-center text-muted small">
+        실습 수행 일시: <span th:text="${#temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 HH:mm:ss')}"></span>
+        &nbsp;│&nbsp; 학번: 2171378 &nbsp;│&nbsp; 성명: 홍준일
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
